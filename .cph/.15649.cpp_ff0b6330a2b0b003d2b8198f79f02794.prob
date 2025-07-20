@@ -1,0 +1,1 @@
+{"name":"Local: 15649","url":"/workspaces/ol/15649.cpp","tests":[{"id":1752980986078,"input":"3 1","output":""},{"id":1752980994591,"input":"4 2","output":""},{"id":1752980998463,"input":"4 4","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/workspaces/ol/15649.cpp","group":"local","local":true}
