@@ -1,33 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, m, l[9];
-vector<int> st;
+vector<int> ans;
+vector<int>l;
+int n, m;
 
 void recu(int k) {
-    if (st.size() == m) {
-        for (int c : st)
+    if (ans.size() >= m) {
+        for (auto c : ans)
             cout << c << " ";
         cout << "\n";
         return;
     }
-
-    for (int i = 1; i <= n; i++) {
+    for (int i = k; i < n; i++) {
         if (l[i] == -1) 
             continue;
-        st.push_back(l[i]);
-        int r = l[i];
+        ans.push_back(l[i]);
         l[i] = -1;
-        recu(k + 1);
-        l[i] = r;
-        st.pop_back();
+        recu(i + 1);
+        l[i] = ans.back();
+        ans.pop_back();
     }
 }
 
 int main() {
     cin >> n >> m;
     for (int i = 1; i <= n; i++)
-        l[i] = i;
+        l.push_back(i);
     recu(0);
     return 0;
 }
